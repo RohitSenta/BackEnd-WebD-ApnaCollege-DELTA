@@ -4,7 +4,7 @@ Full BackEnd Web Development - Apna College - DELTA
 Tutorial Programs 
 
 # Teacher
-shradha Khapra
+Shradha Khapra
 
 # Student
 Delta Student

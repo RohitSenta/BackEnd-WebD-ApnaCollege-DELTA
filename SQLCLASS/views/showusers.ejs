@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Users</title>
+    <style>
+        table, th {
+            border: 2px solid black;
+            padding: 5px;
+        }
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <form method="get" action="/user/new">
+        <br>
+        <button>Add New User</button> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button><a href="http://localhost:8080/">Go To Home</a></button>
+    </form>
+    <br><hr>
+
+    <!-- <form method="get" action="/">
+        <button>Go To Home</button>
+    </form> -->
+
+    <h3>Detais Of Users In Database</h3>
+    <table>
+        <tr>
+            <th>Id</th>
+            <th>Email</th>
+            <th>Username</th>
+            <th>Edit Button</th>
+            <th>Delete Button</th>
+        </tr>
+        <% for(user of users){ %> 
+            <tr>
+                <td> <%= user.id %> </td>
+                <td> <%= user.email %> </td>
+                <td> <%= user.username %> </td>
+                <td>
+                    <form method="GET" action="/user/<%=user.id%>/edit">
+                        <button>Edit Username</button>
+                    </form>
+                </td>
+                <td>
+                    <form method="GET" action="/user/<%=user.id%>/delete">
+                        <button>Delete User</button>
+                    </form>
+                </td>
+            </tr>
+        <% } %>
+    </table>
+    <br><br>
+
+</body>
+</html>
+

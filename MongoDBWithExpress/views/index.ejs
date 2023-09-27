@@ -29,10 +29,17 @@
                 </div>
                 <p>Recieved By <i><%= chat.to %></i></p>
                 <hr>
-                <div class="createAt">
-                    <p>Created At:</p>
-                    <p><%= chat.created_at.toString().split(" ")[4] %></p>
-                    <p><%= chat.created_at.toString().split(" ").slice(0, 4).join("-") %></p> 
+                <div class="times">
+                    <div class="created">
+                        <p>Created At:</p>
+                        <p><%= chat.created_at.toString().split(" ")[4] %></p>
+                        <p><%= chat.created_at.toString().split(" ").slice(0, 4).join("-") %></p>
+                    </div>
+                     <div class="updated">
+                        <p>Updated At:</p>
+                        <p><%= chat.updated_at.toString().split(" ")[4] %></p>
+                        <p><%= chat.updated_at.toString().split(" ").slice(0, 4).join("-") %></p>
+                     </div>
                 </div>      
             </div>
             <br><br>

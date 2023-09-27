@@ -41,7 +41,8 @@ app.post("/chats", (req, res) => {
         from: from,
         to: to,
         msg: msg,
-        created_at: new Date()
+        created_at: new Date(),
+        updated_at: new Date(),
     });
     newChat.save()
     .then(res => {"chat was saved!"})
@@ -62,8 +63,8 @@ app.put("/chats/:id", async (req, res) => {
     let { id } = req.params;
     let { msg: newMsg } = req.body;
     console.log(newMsg);
-    let updatedChat = await Chat.findByIdAndUpdate(id, {msg: newMsg}, {runValidators: true, new: true});
-    
+    let newDate = new Date();
+    let updatedChat = await Chat.findByIdAndUpdate(id, {msg: newMsg, updated_at: newDate}, {runValidators: true, new: true});  
     console.log(updatedChat);
     res.redirect("/chats");
 });

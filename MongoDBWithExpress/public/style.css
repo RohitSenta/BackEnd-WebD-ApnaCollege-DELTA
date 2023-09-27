@@ -13,3 +13,17 @@ body{
     padding: 5px 15px 15px ; 
     border-radius: 16px;
 }
+
+.times {
+    display: flex;
+}
+
+.created {
+    justify-content: left;
+    margin-right: 100px;
+}
+
+.updated {
+    justify-content: right;
+    margin-right: 100px;
+}

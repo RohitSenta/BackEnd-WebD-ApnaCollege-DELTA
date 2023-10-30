@@ -71,7 +71,7 @@ app.get("/chats/:id", asyncWrap(async (req, res, next) => {
         if(!chat) {
             next(new ExpressError(500, "Chat Not Found"));
         }
-        res.render("edit.ejs", { chat });
+        res.render("show.ejs", { chat });
     })
 );
 
